@@ -1,9 +1,15 @@
-function App() {
-  return (
-    <div className="app-container">
-      <h1>🗒️ Sticky Notes</h1>
-    </div>
-  )
-}
+import { ColorProvider } from "./context/ColorContext";
+import ColorSelector from "./components/ColorSelector";
+import NoteBoard from "./components/NoteBoard";
+import "./index.css";
 
-export default App
+export default function App() {
+  return (
+    <ColorProvider>
+      <div className="app">
+        <ColorSelector />
+        <NoteBoard />
+      </div>
+    </ColorProvider>
+  );
+}
